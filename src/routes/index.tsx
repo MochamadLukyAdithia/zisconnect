@@ -369,45 +369,10 @@ function CTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-3 gap-8">
-        <div>
-          <div className="flex items-center gap-2 font-bold text-lg">
-            <span className="w-9 h-9 rounded-xl gradient-hero grid place-items-center text-primary-foreground">
-              <Leaf className="w-5 h-5" />
-            </span>
-            ZIS<span className="text-primary">CONNECT</span>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-            Platform filantropi Islam terintegrasi untuk Indonesia yang lebih hijau dan halal.
-          </p>
-        </div>
-        <div className="text-sm">
-          <div className="font-semibold mb-3">Platform</div>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>Edukasi</li><li>Hitung Nisab</li><li>Bayar Zakat</li><li>Pantau</li><li>Lapor Dampak</li>
-          </ul>
-        </div>
-        <div className="text-sm">
-          <div className="font-semibold mb-3">Mitra Strategis</div>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>BAZNAS & LAZ</li><li>Perbankan Syariah</li><li>Pemerintah Daerah</li><li>Komunitas Sosial</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
-        © 2026 ZISCONNECT Inovasi Filantropi Islam untuk Green Economy & Ekosistem Halal Nasional.
-      </div>
-    </footer>
-  );
-}
-
 function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav />
+      <SiteNav />
       <main>
         <Hero />
         <Problem />
@@ -415,10 +380,10 @@ function Landing() {
         <MainFeatures />
         <PrideFeatures />
         <GreenEconomy />
-        {/* <Roadmap /> */}
         <CTA />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
+
