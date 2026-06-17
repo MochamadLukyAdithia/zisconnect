@@ -177,21 +177,24 @@ function MainFeatures() {
         </div>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mainFeatures.map((f, i) => (
-            <div key={f.title} className="group relative gradient-card border border-border/60 rounded-3xl p-7 hover:shadow-glow hover:-translate-y-1 transition-all duration-300">
+            <Link key={f.title} to={f.to} className="group relative gradient-card border border-border/60 rounded-3xl p-7 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 block">
               <div className="flex items-center justify-between">
                 <div className="w-14 h-14 rounded-2xl gradient-hero grid place-items-center text-primary-foreground shadow-soft">
                   <f.icon className="w-7 h-7" />
                 </div>
                 <span className="text-xs font-bold text-muted-foreground">0{i + 1}</span>
               </div>
-              <h3 className="mt-6 text-xl font-bold">{f.title}</h3>
+              <h3 className="mt-6 text-xl font-bold group-hover:text-primary transition-colors">{f.title}</h3>
               <p className="mt-3 text-muted-foreground leading-relaxed">{f.desc}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {f.chips.map((c) => (
                   <span key={c} className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">{c}</span>
                 ))}
               </div>
-            </div>
+              <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                Buka halaman <ArrowRight className="w-4 h-4" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
