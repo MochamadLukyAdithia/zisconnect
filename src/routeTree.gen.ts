@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SedekahRouteImport } from './routes/sedekah'
+import { Route as PantauRouteImport } from './routes/pantau'
+import { Route as LaporDampakRouteImport } from './routes/lapor-dampak'
+import { Route as HitungNisabRouteImport } from './routes/hitung-nisab'
+import { Route as EdukasiRouteImport } from './routes/edukasi'
+import { Route as DonasiRouteImport } from './routes/donasi'
+import { Route as BayarZakatRouteImport } from './routes/bayar-zakat'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SedekahRoute = SedekahRouteImport.update({
+  id: '/sedekah',
+  path: '/sedekah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PantauRoute = PantauRouteImport.update({
+  id: '/pantau',
+  path: '/pantau',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaporDampakRoute = LaporDampakRouteImport.update({
+  id: '/lapor-dampak',
+  path: '/lapor-dampak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HitungNisabRoute = HitungNisabRouteImport.update({
+  id: '/hitung-nisab',
+  path: '/hitung-nisab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiRoute = EdukasiRouteImport.update({
+  id: '/edukasi',
+  path: '/edukasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonasiRoute = DonasiRouteImport.update({
+  id: '/donasi',
+  path: '/donasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BayarZakatRoute = BayarZakatRouteImport.update({
+  id: '/bayar-zakat',
+  path: '/bayar-zakat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bayar-zakat': typeof BayarZakatRoute
+  '/donasi': typeof DonasiRoute
+  '/edukasi': typeof EdukasiRoute
+  '/hitung-nisab': typeof HitungNisabRoute
+  '/lapor-dampak': typeof LaporDampakRoute
+  '/pantau': typeof PantauRoute
+  '/sedekah': typeof SedekahRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bayar-zakat': typeof BayarZakatRoute
+  '/donasi': typeof DonasiRoute
+  '/edukasi': typeof EdukasiRoute
+  '/hitung-nisab': typeof HitungNisabRoute
+  '/lapor-dampak': typeof LaporDampakRoute
+  '/pantau': typeof PantauRoute
+  '/sedekah': typeof SedekahRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bayar-zakat': typeof BayarZakatRoute
+  '/donasi': typeof DonasiRoute
+  '/edukasi': typeof EdukasiRoute
+  '/hitung-nisab': typeof HitungNisabRoute
+  '/lapor-dampak': typeof LaporDampakRoute
+  '/pantau': typeof PantauRoute
+  '/sedekah': typeof SedekahRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bayar-zakat'
+    | '/donasi'
+    | '/edukasi'
+    | '/hitung-nisab'
+    | '/lapor-dampak'
+    | '/pantau'
+    | '/sedekah'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bayar-zakat'
+    | '/donasi'
+    | '/edukasi'
+    | '/hitung-nisab'
+    | '/lapor-dampak'
+    | '/pantau'
+    | '/sedekah'
+  id:
+    | '__root__'
+    | '/'
+    | '/bayar-zakat'
+    | '/donasi'
+    | '/edukasi'
+    | '/hitung-nisab'
+    | '/lapor-dampak'
+    | '/pantau'
+    | '/sedekah'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BayarZakatRoute: typeof BayarZakatRoute
+  DonasiRoute: typeof DonasiRoute
+  EdukasiRoute: typeof EdukasiRoute
+  HitungNisabRoute: typeof HitungNisabRoute
+  LaporDampakRoute: typeof LaporDampakRoute
+  PantauRoute: typeof PantauRoute
+  SedekahRoute: typeof SedekahRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sedekah': {
+      id: '/sedekah'
+      path: '/sedekah'
+      fullPath: '/sedekah'
+      preLoaderRoute: typeof SedekahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pantau': {
+      id: '/pantau'
+      path: '/pantau'
+      fullPath: '/pantau'
+      preLoaderRoute: typeof PantauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lapor-dampak': {
+      id: '/lapor-dampak'
+      path: '/lapor-dampak'
+      fullPath: '/lapor-dampak'
+      preLoaderRoute: typeof LaporDampakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hitung-nisab': {
+      id: '/hitung-nisab'
+      path: '/hitung-nisab'
+      fullPath: '/hitung-nisab'
+      preLoaderRoute: typeof HitungNisabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi': {
+      id: '/edukasi'
+      path: '/edukasi'
+      fullPath: '/edukasi'
+      preLoaderRoute: typeof EdukasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donasi': {
+      id: '/donasi'
+      path: '/donasi'
+      fullPath: '/donasi'
+      preLoaderRoute: typeof DonasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bayar-zakat': {
+      id: '/bayar-zakat'
+      path: '/bayar-zakat'
+      fullPath: '/bayar-zakat'
+      preLoaderRoute: typeof BayarZakatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +197,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BayarZakatRoute: BayarZakatRoute,
+  DonasiRoute: DonasiRoute,
+  EdukasiRoute: EdukasiRoute,
+  HitungNisabRoute: HitungNisabRoute,
+  LaporDampakRoute: LaporDampakRoute,
+  PantauRoute: PantauRoute,
+  SedekahRoute: SedekahRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

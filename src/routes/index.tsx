@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-zisconnect.png";
+import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import {
   BookOpen, Calculator, Wallet, Activity, FileBarChart, HeartHandshake, Sparkles,
   Leaf, ShieldCheck, Cpu, Link2, ArrowRight, CheckCircle2, Globe2,
@@ -18,35 +19,6 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Nav() {
-  const items = [
-    ["#tentang", "Tentang"],
-    ["#fitur", "Fitur"],
-    ["#dampak", "Dampak"],
-    ["#green", "Green Economy"],
-    // ["#roadmap", "Roadmap"],
-  ];
-  return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-bold text-lg">
-          <span className="w-9 h-9 rounded-xl gradient-hero grid place-items-center text-primary-foreground shadow-soft">
-            <Leaf className="w-5 h-5" />
-          </span>
-          <span>ZIS<span className="text-primary">CONNECT</span></span>
-        </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          {items.map(([h, l]) => (
-            <a key={h} href={h} className="hover:text-foreground transition-colors">{l}</a>
-          ))}
-        </nav>
-        <a href="#cta" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:opacity-90 transition shadow-soft">
-          Mulai Berzakat <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   return (
@@ -180,17 +152,17 @@ function About() {
 }
 
 const mainFeatures = [
-  { icon: BookOpen, title: "Edukasi & Informasi", desc: "Pusat literasi filantropi Islam: zakat fitrah/mal, infak, sedekah, artikel, video, infografis, kalender zakat nasional, dan FAQ.",
+  { to: "/edukasi", icon: BookOpen, title: "Edukasi & Informasi", desc: "Pusat literasi filantropi Islam: zakat fitrah/mal, infak, sedekah, artikel, video, infografis, kalender zakat nasional, dan FAQ.",
     chips: ["Zakat Fitrah", "Zakat Mal", "Artikel", "Video", "Kalender"] },
-  { icon: Calculator, title: "Hitung Nisab", desc: "Kalkulator zakat cerdas untuk fitrah, penghasilan, emas, perdagangan, pertanian, investasi, dan zakat mal.",
+  { to: "/hitung-nisab", icon: Calculator, title: "Hitung Nisab", desc: "Kalkulator zakat cerdas untuk fitrah, penghasilan, emas, perdagangan, pertanian, investasi, dan zakat mal.",
     chips: ["Penghasilan", "Emas", "Perdagangan", "Pertanian", "Investasi"] },
-  { icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi desa), lembaga/amil, dan metode pembayaran termasuk layanan jemput zakat.",
+  { to: "/bayar-zakat", icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi desa), lembaga/amil, dan metode pembayaran termasuk layanan jemput zakat.",
     chips: ["QRIS", "Bank Syariah", "E-Wallet", "Virtual Account", "Jemput Zakat"] },
-  { icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima diverifikasi disalurkan dimanfaatkan selesai, dijamin oleh Blockchain.",
+  { to: "/pantau", icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima diverifikasi disalurkan dimanfaatkan selesai, dijamin oleh Blockchain.",
     chips: ["Blockchain", "Real-time", "Verified"] },
-  { icon: FileBarChart, title: "Lapor Dampak", desc: "Laporan dampak sosial: jumlah & lokasi penerima manfaat, jenis program, dokumentasi, statistik, dan sertifikat digital zakat.",
+  { to: "/lapor-dampak", icon: FileBarChart, title: "Lapor Dampak", desc: "Laporan dampak sosial: jumlah & lokasi penerima manfaat, jenis program, dokumentasi, statistik, dan sertifikat digital zakat.",
     chips: ["Dampak Sosial", "Dokumentasi", "Sertifikat Digital"] },
-];
+] as const;
 
 function MainFeatures() {
   return (
@@ -205,21 +177,24 @@ function MainFeatures() {
         </div>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mainFeatures.map((f, i) => (
-            <div key={f.title} className="group relative gradient-card border border-border/60 rounded-3xl p-7 hover:shadow-glow hover:-translate-y-1 transition-all duration-300">
+            <Link key={f.title} to={f.to} className="group relative gradient-card border border-border/60 rounded-3xl p-7 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 block">
               <div className="flex items-center justify-between">
                 <div className="w-14 h-14 rounded-2xl gradient-hero grid place-items-center text-primary-foreground shadow-soft">
                   <f.icon className="w-7 h-7" />
                 </div>
                 <span className="text-xs font-bold text-muted-foreground">0{i + 1}</span>
               </div>
-              <h3 className="mt-6 text-xl font-bold">{f.title}</h3>
+              <h3 className="mt-6 text-xl font-bold group-hover:text-primary transition-colors">{f.title}</h3>
               <p className="mt-3 text-muted-foreground leading-relaxed">{f.desc}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {f.chips.map((c) => (
                   <span key={c} className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">{c}</span>
                 ))}
               </div>
-            </div>
+              <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                Buka halaman <ArrowRight className="w-4 h-4" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -397,45 +372,10 @@ function CTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-3 gap-8">
-        <div>
-          <div className="flex items-center gap-2 font-bold text-lg">
-            <span className="w-9 h-9 rounded-xl gradient-hero grid place-items-center text-primary-foreground">
-              <Leaf className="w-5 h-5" />
-            </span>
-            ZIS<span className="text-primary">CONNECT</span>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-            Platform filantropi Islam terintegrasi untuk Indonesia yang lebih hijau dan halal.
-          </p>
-        </div>
-        <div className="text-sm">
-          <div className="font-semibold mb-3">Platform</div>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>Edukasi</li><li>Hitung Nisab</li><li>Bayar Zakat</li><li>Pantau</li><li>Lapor Dampak</li>
-          </ul>
-        </div>
-        <div className="text-sm">
-          <div className="font-semibold mb-3">Mitra Strategis</div>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>BAZNAS & LAZ</li><li>Perbankan Syariah</li><li>Pemerintah Daerah</li><li>Komunitas Sosial</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
-        © 2026 ZISCONNECT Inovasi Filantropi Islam untuk Green Economy & Ekosistem Halal Nasional.
-      </div>
-    </footer>
-  );
-}
-
 function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav />
+      <SiteNav />
       <main>
         <Hero />
         <Problem />
@@ -443,10 +383,10 @@ function Landing() {
         <MainFeatures />
         <PrideFeatures />
         <GreenEconomy />
-        {/* <Roadmap /> */}
         <CTA />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
+
