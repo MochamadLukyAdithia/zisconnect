@@ -152,17 +152,17 @@ function About() {
 }
 
 const mainFeatures = [
-  { icon: BookOpen, title: "Edukasi & Informasi", desc: "Pusat literasi filantropi Islam: zakat fitrah/mal, infak, sedekah, artikel, video, infografis, kalender zakat nasional, dan FAQ.",
+  { to: "/edukasi", icon: BookOpen, title: "Edukasi & Informasi", desc: "Pusat literasi filantropi Islam: zakat fitrah/mal, infak, sedekah, artikel, video, infografis, kalender zakat nasional, dan FAQ.",
     chips: ["Zakat Fitrah", "Zakat Mal", "Artikel", "Video", "Kalender"] },
-  { icon: Calculator, title: "Hitung Nisab", desc: "Kalkulator zakat cerdas untuk fitrah, penghasilan, emas, perdagangan, pertanian, investasi, dan zakat mal.",
+  { to: "/hitung-nisab", icon: Calculator, title: "Hitung Nisab", desc: "Kalkulator zakat cerdas untuk fitrah, penghasilan, emas, perdagangan, pertanian, investasi, dan zakat mal.",
     chips: ["Penghasilan", "Emas", "Perdagangan", "Pertanian", "Investasi"] },
-  { icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi desa), lembaga/amil, dan metode pembayaran termasuk layanan jemput zakat.",
+  { to: "/bayar-zakat", icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi desa), lembaga/amil, dan metode pembayaran termasuk layanan jemput zakat.",
     chips: ["QRIS", "Bank Syariah", "E-Wallet", "Virtual Account", "Jemput Zakat"] },
-  { icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima diverifikasi disalurkan dimanfaatkan selesai, dijamin oleh Blockchain.",
+  { to: "/pantau", icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima diverifikasi disalurkan dimanfaatkan selesai, dijamin oleh Blockchain.",
     chips: ["Blockchain", "Real-time", "Verified"] },
-  { icon: FileBarChart, title: "Lapor Dampak", desc: "Laporan dampak sosial: jumlah & lokasi penerima manfaat, jenis program, dokumentasi, statistik, dan sertifikat digital zakat.",
+  { to: "/lapor-dampak", icon: FileBarChart, title: "Lapor Dampak", desc: "Laporan dampak sosial: jumlah & lokasi penerima manfaat, jenis program, dokumentasi, statistik, dan sertifikat digital zakat.",
     chips: ["Dampak Sosial", "Dokumentasi", "Sertifikat Digital"] },
-];
+] as const;
 
 function MainFeatures() {
   return (
