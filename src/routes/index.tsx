@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-zisconnect.png";
+import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import {
   BookOpen, Calculator, Wallet, Activity, FileBarChart, HeartHandshake, Sparkles,
   Leaf, ShieldCheck, Cpu, Link2, ArrowRight, CheckCircle2, Globe2,
