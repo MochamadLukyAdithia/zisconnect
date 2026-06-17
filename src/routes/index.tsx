@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-zisconnect.jpg";
+import heroImg from "@/assets/hero-zisconnect.png";
 import {
   BookOpen, Calculator, Wallet, Activity, FileBarChart, HeartHandshake, Sparkles,
   Leaf, ShieldCheck, Cpu, Link2, ArrowRight, CheckCircle2, Globe2,
@@ -9,9 +9,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ZISCONNECT — Optimalisasi Zakat Digital berbasis AI" },
+      { title: "ZISCONNECT Optimalisasi Zakat Digital berbasis AI" },
       { name: "description", content: "Platform filantropi Islam terintegrasi berbasis AI & Blockchain untuk mendukung Green Economy dan ekosistem halal nasional." },
-      { property: "og:title", content: "ZISCONNECT — Zakat Digital untuk Green Economy" },
+      { property: "og:title", content: "ZISCONNECT Zakat Digital untuk Green Economy" },
       { property: "og:description", content: "Edukasi, hitung, bayar, pantau, lapor, donasi, dan sedekah dalam satu ekosistem." },
     ],
   }),
@@ -24,7 +24,7 @@ function Nav() {
     ["#fitur", "Fitur"],
     ["#dampak", "Dampak"],
     ["#green", "Green Economy"],
-    ["#roadmap", "Roadmap"],
+    // ["#roadmap", "Roadmap"],
   ];
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
@@ -68,7 +68,7 @@ function Hero() {
           <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
             Mendukung transisi <strong className="text-foreground">Green Economy</strong> dan penguatan
             <strong className="text-foreground"> ekosistem halal nasional</strong> melalui satu ekosistem
-            digital — edukasi, hitung, bayar, pantau, lapor, donasi, dan sedekah.
+            digital edukasi, hitung, bayar, pantau, lapor, donasi, dan sedekah.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#fitur" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold shadow-glow hover:opacity-90 transition">
@@ -153,7 +153,7 @@ function About() {
             yang mempermudah masyarakat memahami, menghitung, menyalurkan, memantau, dan mengevaluasi kontribusi sosial.
           </p>
           <p>
-            Lebih dari sekadar platform pembayaran zakat — ZISCONNECT menjadi
+            Lebih dari sekadar platform pembayaran zakat ZISCONNECT menjadi
             <strong className="text-foreground"> ekosistem filantropi digital nasional</strong> yang menghubungkan
             muzakki, amil, lembaga zakat, dan penerima manfaat secara transparan dan akuntabel.
           </p>
@@ -184,9 +184,9 @@ const mainFeatures = [
     chips: ["Zakat Fitrah", "Zakat Mal", "Artikel", "Video", "Kalender"] },
   { icon: Calculator, title: "Hitung Nisab", desc: "Kalkulator zakat cerdas untuk fitrah, penghasilan, emas, perdagangan, pertanian, investasi, dan zakat mal.",
     chips: ["Penghasilan", "Emas", "Perdagangan", "Pertanian", "Investasi"] },
-  { icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi→desa), lembaga/amil, dan metode pembayaran — termasuk layanan jemput zakat.",
+  { icon: Wallet, title: "Bayar Zakat", desc: "Pilih jenis, wilayah distribusi (provinsi desa), lembaga/amil, dan metode pembayaran termasuk layanan jemput zakat.",
     chips: ["QRIS", "Bank Syariah", "E-Wallet", "Virtual Account", "Jemput Zakat"] },
-  { icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima → diverifikasi → disalurkan → dimanfaatkan → selesai, dijamin oleh Blockchain.",
+  { icon: Activity, title: "Pantau Real-time", desc: "Lacak perjalanan dana: diterima diverifikasi disalurkan dimanfaatkan selesai, dijamin oleh Blockchain.",
     chips: ["Blockchain", "Real-time", "Verified"] },
   { icon: FileBarChart, title: "Lapor Dampak", desc: "Laporan dampak sosial: jumlah & lokasi penerima manfaat, jenis program, dokumentasi, statistik, dan sertifikat digital zakat.",
     chips: ["Dampak Sosial", "Dokumentasi", "Sertifikat Digital"] },
@@ -200,7 +200,7 @@ function MainFeatures() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Fitur Utama</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Lima pilar perjalanan zakat digital</h2>
           <p className="mt-4 text-muted-foreground">
-            Dari literasi hingga laporan dampak — semua dalam satu alur yang transparan.
+            Dari literasi hingga laporan dampak semua dalam satu alur yang transparan.
           </p>
         </div>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -245,11 +245,10 @@ function PrideFeatures() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Fitur Kebanggaan</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Donasi & Sedekah — berbagi sepanjang tahun</h2>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Donasi & Sedekah berbagi sepanjang tahun</h2>
           <p className="mt-4 text-muted-foreground text-lg">
             Selain zakat, ZISCONNECT menghadirkan kanal <strong className="text-foreground">Donasi</strong> dan
-            <strong className="text-foreground"> Sedekah</strong> dengan kategori penerima manfaat yang luas —
-            dari korban bencana hingga komunitas peduli lingkungan.
+            <strong className="text-foreground"> Sedekah</strong> dengan kategori penerima manfaat yang luas             dari korban bencana hingga komunitas peduli lingkungan.
           </p>
         </div>
 
@@ -311,7 +310,7 @@ function GreenEconomy() {
     { icon: ShieldCheck, title: "Akuntabilitas", desc: "Transparansi on-chain meningkatkan kepercayaan muzakki & lembaga." },
     { icon: Cpu, title: "AI Personalization", desc: "Rekomendasi program filantropi sesuai profil dan minat pengguna." },
     { icon: Link2, title: "Blockchain", desc: "Audit trail real-time untuk setiap rupiah yang disalurkan." },
-    { icon: Globe2, title: "Jangkauan Nasional", desc: "Dari pusat kota hingga desa terpencil — satu platform untuk semua." },
+    { icon: Globe2, title: "Jangkauan Nasional", desc: "Dari pusat kota hingga desa terpencil satu platform untuk semua." },
   ];
   return (
     <section id="green" className="py-24 bg-background">
@@ -322,8 +321,7 @@ function GreenEconomy() {
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Mendukung Green Economy & Ekosistem Halal</h2>
           </div>
           <p className="text-muted-foreground text-lg">
-            ZISCONNECT mendorong transformasi filantropi Islam menjadi lebih modern, inklusif, dan berkelanjutan —
-            sejalan dengan agenda ekonomi hijau dan penguatan industri halal nasional.
+            ZISCONNECT mendorong transformasi filantropi Islam menjadi lebih modern, inklusif, dan berkelanjutan             sejalan dengan agenda ekonomi hijau dan penguatan industri halal nasional.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -428,7 +426,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
-        © 2026 ZISCONNECT — Inovasi Filantropi Islam untuk Green Economy & Ekosistem Halal Nasional.
+        © 2026 ZISCONNECT Inovasi Filantropi Islam untuk Green Economy & Ekosistem Halal Nasional.
       </div>
     </footer>
   );
@@ -445,7 +443,7 @@ function Landing() {
         <MainFeatures />
         <PrideFeatures />
         <GreenEconomy />
-        <Roadmap />
+        {/* <Roadmap /> */}
         <CTA />
       </main>
       <Footer />
