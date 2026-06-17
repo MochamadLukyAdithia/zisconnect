@@ -19,35 +19,6 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Nav() {
-  const items = [
-    ["#tentang", "Tentang"],
-    ["#fitur", "Fitur"],
-    ["#dampak", "Dampak"],
-    ["#green", "Green Economy"],
-    // ["#roadmap", "Roadmap"],
-  ];
-  return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-bold text-lg">
-          <span className="w-9 h-9 rounded-xl gradient-hero grid place-items-center text-primary-foreground shadow-soft">
-            <Leaf className="w-5 h-5" />
-          </span>
-          <span>ZIS<span className="text-primary">CONNECT</span></span>
-        </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          {items.map(([h, l]) => (
-            <a key={h} href={h} className="hover:text-foreground transition-colors">{l}</a>
-          ))}
-        </nav>
-        <a href="#cta" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:opacity-90 transition shadow-soft">
-          Mulai Berzakat <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   return (
